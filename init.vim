@@ -8,9 +8,16 @@ map("", "<Space>", "<Nop>", opts)
 let mapleader= " "
 let maplocalleader = " " 
 
+"disable netrw at the very start of your init.lua and start nvim-tree with
+"default configure
+lua vim.g.loaded_netrw = 1 
+lua vim.g.loaded_netrwPlugin = 1
+lua require("nvim-tree").setup()
+
 "manson call
 lua require("mason").setup()
 lua require("mason-lspconfig").setup()
+
 "lua require("lsp").setup()
 lua require('lualine').setup()
 "lua require('lualinetheme')
@@ -69,7 +76,7 @@ nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 "remap into advanced search box 
 nnoremap <leader>s :SearchBoxIncSearch<CR>
 "remap : into FineCmdline plugin
-"nnoremap : <cmd>FineCmdline<CR>
+nnoremap : <cmd>FineCmdline<CR>
 
 "float term keymaps
 nnoremap   <silent>   <F7>    :FloatermNew --position=topright<CR>
@@ -81,3 +88,5 @@ tnoremap   <silent>   <F9>    <C-\><C-n>:FloatermNext<CR>
 nnoremap   <silent>   <F12>   :FloatermToggle<CR>
 tnoremap   <silent>   <F12>   <C-\><C-n>:FloatermToggle<CR>
 
+"toggle nvim-tree
+nnoremap <leader>e <cmd>NvimTreeToggle<CR> 
