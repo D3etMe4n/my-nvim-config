@@ -42,6 +42,29 @@ use {
 use 'voldikss/vim-floaterm'
 
 --leader mapper
-use 'spinks/vim-leader-guide'
+--use 'spinks/vim-leader-guide'
+
+--auto close bracket
+use {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = function()
+        require("nvim-autopairs").setup {}
+    end
+}
+
+use {
+  'VonHeikemen/fine-cmdline.nvim',
+  requires = {
+    {'MunifTanjim/nui.nvim'}
+  }
+}
+
+use {
+  'VonHeikemen/searchbox.nvim',
+  requires = {
+    {'MunifTanjim/nui.nvim'}
+  }
+}
 
 end)
