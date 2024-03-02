@@ -68,8 +68,9 @@ nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 "remap into advanced search box 
 nnoremap <leader>s :SearchBoxIncSearch<CR>
-"remap : into FineCmdline plugin
-nnoremap : <cmd>FineCmdline<CR>
+
+"to enable such a beautiful cmd, you have to remove the commend on the under line
+"nnoremap : <cmd>FineCmdline<CR>
 
 "float term keymaps
 nnoremap   <silent>   <F7>    :FloatermNew --position=topright<CR>
