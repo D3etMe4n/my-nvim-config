@@ -15,7 +15,7 @@ lua require("mason-lspconfig").setup()
 lua require('lualine').setup()
 "lua require('lualinetheme')
 "lua require('noiceconfig')
-
+lua require('cmpsetup')
 "auto setup with lspconfig, adding more Language Sever following this instruction : require("lspconfig").[lsp-server].setup {}
 lua require("lspconfig").clangd.setup{} 
 
@@ -68,9 +68,8 @@ nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 "remap into advanced search box 
 nnoremap <leader>s :SearchBoxIncSearch<CR>
-
-"to enable such a beautiful cmd, you have to remove the comment on the under line
-"nnoremap : <cmd>FineCmdline<CR>
+"remap : into FineCmdline plugin
+nnoremap : <cmd>FineCmdline<CR>
 
 "float term keymaps
 nnoremap   <silent>   <F7>    :FloatermNew --position=topright<CR>
