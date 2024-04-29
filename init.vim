@@ -17,6 +17,8 @@ lua require("nvim-tree").setup()
 "manson call
 lua require("mason").setup()
 lua require("mason-lspconfig").setup()
+lua require("mason-nvim-dap").setup()
+"lua require('mason-nvim-dap').default_setup()
 
 "lua require("lsp").setup()
 lua require('lualine').setup()
@@ -26,9 +28,12 @@ lua require('cmpsetup')
 "auto setup with lspconfig, adding more Language Sever following this instruction : require("lspconfig").[lsp-server].setup {}
 lua require("lspconfig").clangd.setup{} 
 
+"Comment plugins
+lua require('Comment').setup()
+
 colorscheme catppuccin-mocha " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 "vim.cmd.colorscheme "catppuccin
-set number
+set number relativenumber
 
 "telescope keymap
 " Find files using Telescope command-line sugar.
@@ -76,7 +81,7 @@ nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 "remap into advanced search box 
 nnoremap <leader>s :SearchBoxIncSearch<CR>
 "remap : into FineCmdline plugin
-"nnoremap : <cmd>FineCmdline<CR>
+nnoremap : <cmd>FineCmdline<CR>
 
 "float term keymaps
 nnoremap   <silent>   <F7>    :FloatermNew --position=topright<CR>
@@ -90,3 +95,8 @@ tnoremap   <silent>   <F12>   <C-\><C-n>:FloatermToggle<CR>
 
 "toggle nvim-tree
 nnoremap <leader>e <cmd>NvimTreeToggle<CR> 
+
+"Change space between tabs
+set tabstop=3
+set shiftwidth=4
+									 
